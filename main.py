@@ -25,6 +25,8 @@ def process_path(start_url: str, target: str, relation_table: RelationTable, vis
             return new_path
     if len(neighbors) == 0:
         return None
+    if len(new_path) == 4:
+        return None
     for neighbor in neighbors:
         next_path = process_path(neighbor, target, relation, visit_table, new_path)
         if next_path is not None:
