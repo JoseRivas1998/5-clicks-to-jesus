@@ -27,6 +27,6 @@ def get_links(page):
                     url = wiki_pages_m.group(1).lower()
                     if url in excluded_links:
                         continue
-                    if re.match('(wikipedia|category):.*', url) is None:
+                    if re.match('(wikipedia|category|special|help):.*', url) is None:
                         links.add(url)
     return links
